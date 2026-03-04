@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="c192" width="192" height="192"></canvas>
+<canvas id="c512" width="512" height="512"></canvas>
+<script>
+function makeIcon(id, size) {
+  const c = document.getElementById(id);
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#080818';
+  ctx.fillRect(0, 0, size, size);
+  const r = size * 0.4;
+  ctx.beginPath();
+  ctx.arc(size/2, size/2, r, 0, Math.PI*2);
+  ctx.fillStyle = '#4f8ef7';
+  ctx.fill();
+  ctx.fillStyle = 'white';
+  ctx.font = `bold ${size*0.35}px Arial`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SS', size/2, size/2);
+  return c.toDataURL('image/png');
+}
+const a1 = document.createElement('a');
+a1.href = makeIcon('c192', 192);
+a1.download = 'icon-192.png';
+a1.click();
+setTimeout(() => {
+  const a2 = document.createElement('a');
+  a2.href = makeIcon('c512', 512);
+  a2.download = 'icon-512.png';
+  a2.click();
+}, 1000);
+</script>
+</body>
+</html>
