@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with AI-Based Fraud Risk Detection & Digital Awareness System
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
